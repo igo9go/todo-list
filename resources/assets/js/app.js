@@ -7,13 +7,15 @@
 
 require('./bootstrap');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the body of the page. From here, you may begin adding components to
- * the application, or feel free to tweak this setup for your needs.
- */
+import VueResource from 'vue-resource';
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.use(VueResource);
+
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
+
+
+//注册组件
+Vue.component('tasks', require('./components/Tasks.vue'));
 
 const app = new Vue({
     el: 'body'
