@@ -16,7 +16,8 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAt
 
 //注册组件
 Vue.component('tasks', require('./components/Tasks.vue'));
-
+Vue.component('page', require('./components/Page.vue'));
 const app = new Vue({
-    el: 'body'
+    el: 'body',
+
 });

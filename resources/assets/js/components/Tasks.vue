@@ -18,14 +18,16 @@
 <!--<del>被删除</del>-->
 <!--<span style="text-decoration:line-through;">删除线效果</span>-->
 
-
 <script>
+    console.log()
     export default{
+        props: ['cur'],
         data: function () {
             return {
                 notes:'',
                 list: [],
                 number:1,
+                all:20,
             };
         },
         computed: {
@@ -36,6 +38,8 @@
             }
         },
         created: function () {
+            console.log('hahhaha');
+            console.log(this.all);
             this.init();
         },
         methods: {

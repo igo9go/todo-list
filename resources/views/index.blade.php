@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-        <tasks>
 
-        </tasks>
+        <tasks></tasks>
+        <page></page>
 
     <script src="{{asset('js/app.js')}}"></script>
 </body>
