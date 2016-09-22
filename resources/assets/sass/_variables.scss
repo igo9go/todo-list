@@ -1,7 +1,9 @@
 
 // Body
 $body-bg: #f5f8fa;
-
+body {
+  margin: 100px;
+}
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border: $laravel-border-color;

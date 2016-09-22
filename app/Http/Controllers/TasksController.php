@@ -80,6 +80,9 @@ class TasksController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        Task::where('id', $id)->update(['completed'=>$request->completed]);
+        return Response::json(['status' => '200']);
     }
 
     /**

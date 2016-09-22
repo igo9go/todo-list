@@ -6,11 +6,18 @@
     <h1>My Tasks ({{counter}})</h1>
     <ul class="list-group">
         <li class="list-group-item" v-for="task in list | orderBy 'id' -1 ">
-            {{task.id}} {{task.body}}
-            <strong @click="deleteTask(task)" class="right">x</strong>
+            <!--<input type="checkbox" @click="updateTask(task)">-->
+                <input type="checkbox"  @click="updateTask(task)" v-if="!task.completed">
+            <span v-if="!task.completed">{{task.created_at.substring(5)}}   任务:{{task.body}}</span>
+            <del v-else>{{task.created_at.substring(5)}}   任务:{{task.body}}</del>
+            <button @click="deleteTask(task)"  type="button" class="close pull-right"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         </li>
     </ul>
 </template>
+
+<!--<del>被删除</del>-->
+<!--<span style="text-decoration:line-through;">删除线效果</span>-->
+
 
 <script>
     export default{
@@ -18,6 +25,7 @@
             return {
                 notes:'',
                 list: [],
+                number:1,
             };
         },
         computed: {
@@ -60,15 +68,13 @@
                     console.log('error', response);
                 });
             },
-
-            updateCustomer: function() {
-
-//                this.$http.put('api/tasks/' +  task.id, vm.item)
-//                        .then((response) => {
-//                    vm.getCustomers()
-//            })
-            }
-
+            updateTask: function (task) {
+                console.log(task);
+                this.$http.put('api/tasks/' +  task.id, {completed:1})
+                    .then((response) => {
+                        this.init();
+                     })
+            },
         }
     }
 </script>

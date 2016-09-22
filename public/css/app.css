@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+body {
+  margin: 100px; }
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5765,5 +5768,9 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+body {
+  margin: 100px;
+  background-color: #2a88bd; }
 
 /*# sourceMappingURL=app.css.map */

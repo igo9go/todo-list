@@ -11,10 +11,8 @@
 <body>
         <tasks>
 
-
         </tasks>
 
     <script src="{{asset('js/app.js')}}"></script>
-
 </body>
 </html>
